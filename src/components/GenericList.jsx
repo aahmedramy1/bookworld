@@ -70,20 +70,19 @@ const GenericList = ({ data, columns, onSelectionChange }) => {
 
     return (
         <Paper>
-            <TableContainer>
-                <Table>
+            <TableContainer component={Paper} sx={{ width: "100%" }}>
+                <Table sx={{ width: "100%" }}>
                     <TableHead>
                         <TableRow>
-                            <TableCell padding="checkbox">
+                            <TableCell padding="checkbox" sx={{ width: "50px" }}>
                                 <Checkbox
                                     indeterminate={selected.length > 0 && selected.length < data.length}
                                     checked={data.length > 0 && selected.length === data.length}
                                     onChange={handleSelectAllClick}
                                 />
                             </TableCell>
-                            {/* Render headers for each column */}
                             {columns.map((column, colIndex) => (
-                                <TableCell key={colIndex}>
+                                <TableCell key={colIndex} sx={{ width: `${100 / columns.length}%`, minWidth: "150px" }}>
                                     {column.headerName}
                                 </TableCell>
                             ))}
@@ -102,15 +101,14 @@ const GenericList = ({ data, columns, onSelectionChange }) => {
                                     aria-checked={isItemSelected}
                                     selected={isItemSelected}
                                 >
-                                    <TableCell padding="checkbox">
+                                    <TableCell padding="checkbox" sx={{ width: "50px" }}>
                                         <Checkbox
                                             checked={isItemSelected}
                                             onChange={(event) => handleClick(event, row, overallIndex)}
                                         />
                                     </TableCell>
-
                                     {columns.map((column, colIndex) => (
-                                        <TableCell key={colIndex}>
+                                        <TableCell key={colIndex} sx={{ width: `${100 / columns.length}%`, minWidth: "150px" }}>
                                             {column.actions ? (
                                                 column.actions.map((action, actionIndex) => (
                                                     <Button
@@ -118,16 +116,14 @@ const GenericList = ({ data, columns, onSelectionChange }) => {
                                                         onClick={() => action.onClick(row)}
                                                         size="small"
                                                         variant="outlined"
-                                                        style={{ marginRight: 4 }}
+                                                        sx={{ mr: 1 }}
                                                     >
                                                         {action.label}
                                                     </Button>
                                                 ))
                                             ) : column.renderCell ? (
-                                                // If a custom renderCell function is provided.
                                                 column.renderCell(row[column.field], row)
                                             ) : (
-                                                // Default: display the data field.
                                                 row[column.field]
                                             )}
                                         </TableCell>
@@ -138,6 +134,7 @@ const GenericList = ({ data, columns, onSelectionChange }) => {
                     </TableBody>
                 </Table>
             </TableContainer>
+
 
             <TablePagination
                 component="div"
