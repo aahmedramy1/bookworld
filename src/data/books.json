@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "The Enchanted Forest",
+    "pageCount": 234,
+    "authorId": 1,
+    "storeIds": [1, 2]
+  },
+  {
+    "id": 2,
+    "name": "Mysteries of the Night",
+    "pageCount": 320,
+    "authorId": 2,
+    "storeIds": [1]
+  },
+  {
+    "id": 3,
+    "name": "Journey to the Stars",
+    "pageCount": 280,
+    "authorId": 3,
+    "storeIds": [2, 3]
+  },
+  {
+    "id": 4,
+    "name": "Secrets of the Ocean",
+    "pageCount": 190,
+    "authorId": 4,
+    "storeIds": [3]
+  },
+  {
+    "id": 5,
+    "name": "Legends of the Ancient World",
+    "pageCount": 410,
+    "authorId": 5,
+    "storeIds": [1, 4]
+  },
+  {
+    "id": 6,
+    "name": "The Forgotten Realms",
+    "pageCount": 350,
+    "authorId": 2,
+    "storeIds": [2]
+  },
+  {
+    "id": 7,
+    "name": "Chronicles of Time",
+    "pageCount": 275,
+    "authorId": 3,
+    "storeIds": [3, 4]
+  },
+  {
+    "id": 8,
+    "name": "The Last Kingdom",
+    "pageCount": 300,
+    "authorId": 4,
+    "storeIds": [1, 2, 3]
+  },
+  {
+    "id": 9,
+    "name": "Rise of the Phoenix",
+    "pageCount": 255,
+    "authorId": 1,
+    "storeIds": [4]
+  },
+  {
+    "id": 10,
+    "name": "Mystic River",
+    "pageCount": 220,
+    "authorId": 5,
+    "storeIds": [1, 3]
+  },
+  {
+    "id": 11,
+    "name": "Beyond the Horizon",
+    "pageCount": 310,
+    "authorId": 2,
+    "storeIds": [2, 4]
+  },
+  {
+    "id": 12,
+    "name": "Tales of Wonder",
+    "pageCount": 195,
+    "authorId": 3,
+    "storeIds": [1, 2]
+  },
+  {
+    "id": 13,
+    "name": "Dreams of Yesterday",
+    "pageCount": 265,
+    "authorId": 4,
+    "storeIds": [3]
+  },
+  {
+    "id": 14,
+    "name": "The Silent Echo",
+    "pageCount": 230,
+    "authorId": 5,
+    "storeIds": [2, 3, 4]
+  },
+  {
+    "id": 15,
+    "name": "Whispers in the Wind",
+    "pageCount": 205,
+    "authorId": 1,
+    "storeIds": [1]
+  },
+  {
+    "id": 16,
+    "name": "The Infinite Loop",
+    "pageCount": 315,
+    "authorId": 2,
+    "storeIds": [2, 4]
+  },
+  {
+    "id": 17,
+    "name": "Shadows of the Past",
+    "pageCount": 245,
+    "authorId": 3,
+    "storeIds": [1, 3]
+  },
+  {
+    "id": 18,
+    "name": "The Last Voyage",
+    "pageCount": 290,
+    "authorId": 4,
+    "storeIds": [2]
+  },
+  {
+    "id": 19,
+    "name": "Embers of Hope",
+    "pageCount": 230,
+    "authorId": 5,
+    "storeIds": [1, 2, 3]
+  },
+  {
+    "id": 20,
+    "name": "Winds of Change",
+    "pageCount": 275,
+    "authorId": 1,
+    "storeIds": [3, 4]
+  }
+]
