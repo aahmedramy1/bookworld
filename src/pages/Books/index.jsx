@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { debounce } from "lodash";
-import { filterBooksByName } from "../../redux/slices/booksSlice";
+import {addBook, editBook, filterBooksByName} from "../../redux/slices/booksSlice";
 import BookModal from "./components/BookModal";
 
 const Index = () => {
@@ -58,37 +58,58 @@ const Index = () => {
         console.log('Selected rows:', newSelectedRows);
     };
 
+    const handleSave = (bookData) => {
+        if(bookData.id) {
+            dispatch(editBook(bookData));
+        } else {
+            dispatch(addBook(bookData));
+        }
+    }
+
     const handleChange = (event) => {
         const value = event.target.value;
         setSearch(value);
         debouncedSearch(value);
     };
 
+    const addNewBook = () => {
+        setBookToEdit(null);
+        setBookModalOpen(true);
+    }
+
     return (
         <div className="flex flex-col gap-6 max-h-full">
-            <div className="flex gap-6 items-center">
-                <div className="text-black font-bold text-2xl">
-                    Books List
+            <div className='flex justify-between items-center'>
+                <div className="flex gap-6 items-center">
+                    <div className="text-black font-bold text-2xl">
+                        Books List
+                    </div>
+                    <TextField
+                        className="bg-white rounded"
+                        variant={"outlined"}
+                        placeholder="Search"
+                        value={search}
+                        onChange={handleChange}
+                        size="small"
+                        sx={{
+                            "& fieldset": { border: "none" },
+                            "& .MuiOutlinedInput-root": { backgroundColor: "white" }
+                        }}
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <SearchIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
                 </div>
-                <TextField
-                    className="bg-white rounded"
-                    variant={"outlined"}
-                    placeholder="Search"
-                    value={search}
-                    onChange={handleChange}
-                    size="small"
-                    sx={{
-                        "& fieldset": { border: "none" },
-                        "& .MuiOutlinedInput-root": { backgroundColor: "white" }
-                    }}
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-                        ),
-                    }}
-                />
+                <button
+                    className="bg-primary text-white rounded px-4 py-2"
+                    onClick={addNewBook}
+                >
+                    Add New Book
+                </button>
             </div>
             <div className="overflow-auto">
                 <GenericList
@@ -99,7 +120,9 @@ const Index = () => {
             </div>
             <BookModal
                 open={bookModalOpen}
+                book={bookToEdit}
                 handleClose={() => setBookModalOpen(false)}
+                handleSave={handleSave}
             />
         </div>
     );

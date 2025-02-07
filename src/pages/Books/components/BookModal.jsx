@@ -28,13 +28,17 @@ const BookModal = ({ open, handleClose, book, handleSave }) => {
         }
     }, [book]);
 
+    useEffect(() => {
+        setError("");
+    }, [open]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setBookData((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = () => {
-        if (!bookData.name || !bookData.pages || !bookData.authorId) {
+        if (!bookData.name || !bookData.pageCount || !bookData.authorId) {
             setError("All fields are required.");
             return;
         }
@@ -72,9 +76,9 @@ const BookModal = ({ open, handleClose, book, handleSave }) => {
                         label="Enter number of Pages"
                         className='bg-gray-100 !m-0'
                         size="small"
-                        name="pages"
+                        name="pageCount"
                         type="number"
-                        value={bookData.pages}
+                        value={bookData.pageCount}
                         onChange={handleChange}
                     />
                 </div>
