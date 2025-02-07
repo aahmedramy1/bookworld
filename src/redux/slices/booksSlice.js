@@ -9,8 +9,12 @@ const booksSlice = createSlice({
     },
     reducers: {
         addBook: (state, action) => {
-            state.allBooks.push(action.payload);
-            state.filteredBooks.push(action.payload);
+            const newBook = {
+                ...action.payload,
+                id: state.allBooks.length ? state.allBooks[state.allBooks.length - 1].id + 1 : 1,
+            };
+            state.allBooks.push(newBook);
+            state.filteredBooks.push(newBook);
         },
         editBook: (state, action) => {
             const { id, name, pageCount, authorId, storeIds } = action.payload;

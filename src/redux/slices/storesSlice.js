@@ -9,8 +9,12 @@ const storesSlice = createSlice({
     },
     reducers: {
         addStore: (state, action) => {
-            state.allStores.push(action.payload);
-            state.filteredStores.push(action.payload);
+            const newStore = {
+                ...action.payload,
+                id: state.allStores.length ? state.allStores[state.allStores.length - 1].id + 1 : 1,
+            };
+            state.allStores.push(newStore);
+            state.filteredStores.push(newStore);
         },
         editStore: (state, action) => {
             const {id, name, address} = action.payload;

@@ -9,8 +9,12 @@ const authorsSlice = createSlice({
     },
     reducers: {
         addAuthor: (state, action) => {
-            state.allAuthors.push(action.payload);
-            state.filteredAuthors.push(action.payload);
+            const newAuthor = {
+                ...action.payload,
+                id: state.allAuthors.length ? state.allAuthors[state.allAuthors.length - 1].id + 1 : 1,
+            };
+            state.allAuthors.push(newAuthor);
+            state.filteredAuthors.push(newAuthor);
         },
         editAuthor: (state, action) => {
             const {id, name} = action.payload;
