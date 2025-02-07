@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+
 import {
     Table,
     TableBody,
@@ -150,24 +150,6 @@ const GenericList = ({ data, columns, onSelectionChange }) => {
             />
         </Paper>
     );
-};
-
-GenericList.propTypes = {
-    data: PropTypes.array.isRequired,
-    columns: PropTypes.arrayOf(
-        PropTypes.shape({
-            field: PropTypes.string,
-            headerName: PropTypes.string,
-            renderCell: PropTypes.func,
-            actions: PropTypes.arrayOf(
-                PropTypes.shape({
-                    label: PropTypes.string.isRequired,
-                    onClick: PropTypes.func.isRequired,
-                })
-            )
-        })
-    ).isRequired,
-    onSelectionChange: PropTypes.func,
 };
 
 export default GenericList;

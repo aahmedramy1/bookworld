@@ -7,9 +7,9 @@ function App() {
     return (
         <div className="flex h-screen ">
             <Sidebar />
-            <div className="w-4/5 flex flex-col bg-gray-100 p-8">
+            <div className="w-4/5 flex flex-col bg-gray-100 p-8 gap-8">
                 <Navbar />
-                <div className="flex-1 p-6  overflow-auto">
+                <div className="flex-1 overflow-auto">
                     <AppRouter />
                 </div>
             </div>
