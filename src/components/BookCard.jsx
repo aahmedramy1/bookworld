@@ -1,4 +1,9 @@
+import {useSelector} from "react-redux";
+
 const BookCard = ({ book }) => {
+    const authors = useSelector(state => state.authors.allAuthors);
+    let authorName = authors.find((author) => author.id === book.authorId)?.name ?? 'N/A';
+
     return (
         <div className="flex gap-4 bg-white p-6 ">
             <div className="flex bg-[#FFEBE1] font-[500] justify-center items-center
@@ -10,8 +15,7 @@ const BookCard = ({ book }) => {
 
             <div>
                 <div>{book.name}</div>
-                <div className='text-[#8F8F8F]'>by Brooklyn Simmons </div>
-                <div>Stores:</div>
+                <div className='text-[#8F8F8F]'>by {authorName}</div>
             </div>
         </div>
     );
