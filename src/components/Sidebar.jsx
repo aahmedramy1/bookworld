@@ -7,7 +7,7 @@ const Sidebar = () => {
     const location = useLocation(); // <-- Get current path
 
     const menuItems = [
-        { icon: <MdGridView />, text: "Shop", path: "/shop" },
+        { icon: <MdGridView />, text: "Shop", path: "/shop/books" },
         { icon: <FaStore />, text: "Stores", path: "/stores" },
         { icon: <FaFeather />, text: "Author", path: "/admin/authors" },
         { icon: <FaBookOpen />, text: "Books", path: "/admin/books" },
