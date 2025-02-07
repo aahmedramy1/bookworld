@@ -1,3 +1,5 @@
+import {Button} from "@mui/material";
+
 const AuthorCard = ({ author }) => {
 
     const randomId = Math.floor(Math.random() * 100);
@@ -15,8 +17,13 @@ const AuthorCard = ({ author }) => {
                 />
             </div>
 
-            <div>
-                <div>{author.name}</div>
+            <div className='h-full flex flex-col justify-between items-start'>
+                <div>
+                    <div>{author.name}</div>
+                </div>
+                <Button onClick={() => {}} color="primary" variant='contained'  >
+                    View Profile
+                </Button>
             </div>
         </div>
     )
