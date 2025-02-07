@@ -1,13 +1,16 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
-import GenericList from '../components/GenericList';
+import GenericList from '../../components/GenericList';
 import { useDispatch, useSelector } from "react-redux";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { debounce } from "lodash";
-import { filterBooksByName } from "../redux/slices/booksSlice";
+import { filterBooksByName } from "../../redux/slices/booksSlice";
+import BookModal from "./components/BookModal";
 
-const Books = () => {
+const Index = () => {
     const [selectedRows, setSelectedRows] = useState([]);
+    const [bookModalOpen, setBookModalOpen] = useState(false);
+    const [bookToEdit, setBookToEdit] = useState(null);
     const [search, setSearch] = useState("");
     const data = useSelector(state => state.books.filteredBooks);
     const dispatch = useDispatch();
@@ -36,7 +39,8 @@ const Books = () => {
                 {
                     label: 'Edit',
                     onClick: (row) => {
-                        console.log('Edit clicked for:', row);
+                        setBookModalOpen(!bookModalOpen);
+                        setBookToEdit(row);
                     }
                 },
                 {
@@ -93,8 +97,12 @@ const Books = () => {
                     onSelectionChange={handleSelectionChange}
                 />
             </div>
+            <BookModal
+                open={bookModalOpen}
+                handleClose={() => setBookModalOpen(false)}
+            />
         </div>
     );
 };
 
-export default Books;
+export default Index;
