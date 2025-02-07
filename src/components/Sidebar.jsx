@@ -1,13 +1,14 @@
 import React from "react";
-import { FaHome, FaBook, FaUser, FaStore, FaSignOutAlt } from "react-icons/fa";
+import { FaStore, FaSignOutAlt, FaFeather, FaBookOpen } from "react-icons/fa";
+import { MdGridView } from "react-icons/md";
 
 const Sidebar = () => {
 
     const menuItems = [
-        { icon: <FaHome />, text: "Home" },
-        { icon: <FaBook />, text: "Books" },
+        { icon: <MdGridView />, text: "Shop" },
         { icon: <FaStore />, text: "Stores" },
-        { icon: <FaUser />, text: "Authors" }
+        { icon: <FaFeather />, text: "Author" },
+        { icon: <FaBookOpen />, text: "Books" },
     ];
 
     return (
