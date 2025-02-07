@@ -3,14 +3,14 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#007bff", // Primary color (Blue)
+            main: "#BF5523", // Primary color (Blue)
         },
         secondary: {
             main: "#f50057", // Secondary color (Pink)
         },
     },
     typography: {
-        fontFamily: "Arial, sans-serif",
+        fontFamily: `"Poppins", "Arial", "sans-serif"`, // Use Poppins as primary font
     },
     components: {
         MuiButton: {
