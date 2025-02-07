@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import {
     Table,
     TableBody,
@@ -18,9 +17,7 @@ const GenericList = ({ data, columns, onSelectionChange }) => {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
 
-
     const getRowId = (row, index) => row.id ?? index;
-
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
@@ -123,6 +120,8 @@ const GenericList = ({ data, columns, onSelectionChange }) => {
                                                 ))
                                             ) : column.renderCell ? (
                                                 column.renderCell(row[column.field], row)
+                                            ) : typeof column.field === 'function' ? (
+                                                column.field(row)
                                             ) : (
                                                 row[column.field]
                                             )}
@@ -134,7 +133,6 @@ const GenericList = ({ data, columns, onSelectionChange }) => {
                     </TableBody>
                 </Table>
             </TableContainer>
-
 
             <TablePagination
                 component="div"

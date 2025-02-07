@@ -14,6 +14,14 @@ const Index = () => {
     const [search, setSearch] = useState("");
     const data = useSelector(state => state.books.filteredBooks);
     const dispatch = useDispatch();
+    const authors = useSelector(state => state.authors.allAuthors);
+    const findAuthor = (book) => {
+        let {authorId} = book;
+         let author =authors.find((author) => author.id === authorId)
+        if(author) return author.name
+        return 'N/A'
+    }
+
 
     const onSearch = useCallback((searchTerm) => {
         dispatch(filterBooksByName(searchTerm));
@@ -32,7 +40,7 @@ const Index = () => {
         { field: 'id', headerName: 'Book ID' },
         { field: 'name', headerName: 'Name' },
         { field: 'pageCount', headerName: 'Pages' },
-        { field: 'authorId', headerName: 'Author' },
+        { field: (row) => findAuthor(row), headerName: 'Author' },
         {
             headerName: 'Actions',
             actions: [
