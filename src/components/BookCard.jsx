@@ -1,6 +1,6 @@
 const BookCard = ({ book }) => {
     return (
-        <div className="flex gap-4 ">
+        <div className="flex gap-4 bg-white p-6 ">
             <div className="flex bg-[#FFEBE1] font-[500] justify-center items-center
                 rounded-l-[20px] rounded-r-[4px]
                 shadow-lg shadow-black/30

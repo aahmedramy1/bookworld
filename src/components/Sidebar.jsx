@@ -7,7 +7,7 @@ const Sidebar = () => {
     const location = useLocation();
 
     const menuItems = [
-        { icon: <MdGridView />, text: "Shop", path: "/shop/books" },
+        { icon: <MdGridView />, text: "Shop", path: "/shop" },
         { icon: <FaStore />, text: "Stores", path: "/admin/stores" },
         { icon: <FaFeather />, text: "Author", path: "/admin/authors" },
         { icon: <FaBookOpen />, text: "Books", path: "/admin/books" },
@@ -21,7 +21,7 @@ const Sidebar = () => {
             <nav className="flex-1">
                 <ul className="space-y-2">
                     {menuItems.map((item, index) => {
-                        const isActive = location.pathname === item.path; // <-- Check if current path matches
+                        const isActive = location.pathname.startsWith(item.path);
 
                         return (
                             <li key={index}>
