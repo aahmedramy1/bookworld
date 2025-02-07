@@ -1,0 +1,22 @@
+[
+  { "id": 1, "name": "Book Haven", "address": "123 Main St, New York, NY" },
+  { "id": 2, "name": "The Reading Nook", "address": "456 Oak Ave, Los Angeles, CA" },
+  { "id": 3, "name": "Pages & Co.", "address": "789 Maple Dr, Chicago, IL" },
+  { "id": 4, "name": "Novel Ideas", "address": "101 Pine Rd, Houston, TX" },
+  { "id": 5, "name": "The Book Loft", "address": "202 Cedar St, Phoenix, AZ" },
+  { "id": 6, "name": "Storyteller's Haven", "address": "303 Birch Ln, Philadelphia, PA" },
+  { "id": 7, "name": "Literary Escape", "address": "404 Walnut Blvd, San Antonio, TX" },
+  { "id": 8, "name": "Bound & Found", "address": "505 Spruce Ct, San Diego, CA" },
+  { "id": 9, "name": "The Book Den", "address": "606 Elm St, Dallas, TX" },
+  { "id": 10, "name": "Ink & Paper", "address": "707 Fir Ave, San Jose, CA" },
+  { "id": 11, "name": "Whispering Pages", "address": "808 Willow Rd, Austin, TX" },
+  { "id": 12, "name": "Timeless Tales", "address": "909 Redwood Dr, Jacksonville, FL" },
+  { "id": 13, "name": "The Booksmith", "address": "111 Cherry Ln, San Francisco, CA" },
+  { "id": 14, "name": "Chapter One", "address": "222 Magnolia St, Columbus, OH" },
+  { "id": 15, "name": "Fiction Junction", "address": "333 Hickory Rd, Fort Worth, TX" },
+  { "id": 16, "name": "The Book Emporium", "address": "444 Palm Ave, Indianapolis, IN" },
+  { "id": 17, "name": "Cozy Reads", "address": "555 Aspen Dr, Charlotte, NC" },
+  { "id": 18, "name": "Epic Tales", "address": "666 Dogwood St, Seattle, WA" },
+  { "id": 19, "name": "The Literary Lounge", "address": "777 Sequoia Rd, Denver, CO" },
+  { "id": 20, "name": "Books & Brews", "address": "888 Sycamore Ct, Boston, MA" }
+]

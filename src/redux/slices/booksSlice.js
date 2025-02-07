@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import booksData from "../../data/books.json"; // Ensure this path is correct
+import booksData from "../../data/books.json";
 
 const booksSlice = createSlice({
     name: "books",
     initialState: {
-        allBooks: booksData,  // Store all books here
-        filteredBooks: booksData, // This changes based on filtering
+        allBooks: booksData,
+        filteredBooks: booksData,
     },
     reducers: {
         addBook: (state, action) => {

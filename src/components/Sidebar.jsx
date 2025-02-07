@@ -1,14 +1,14 @@
 import React from "react";
 import { FaStore, FaSignOutAlt, FaFeather, FaBookOpen } from "react-icons/fa";
 import { MdGridView } from "react-icons/md";
-import { Link, useLocation } from "react-router-dom"; // <-- Import useLocation
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
-    const location = useLocation(); // <-- Get current path
+    const location = useLocation();
 
     const menuItems = [
         { icon: <MdGridView />, text: "Shop", path: "/shop/books" },
-        { icon: <FaStore />, text: "Stores", path: "/stores" },
+        { icon: <FaStore />, text: "Stores", path: "/admin/stores" },
         { icon: <FaFeather />, text: "Author", path: "/admin/authors" },
         { icon: <FaBookOpen />, text: "Books", path: "/admin/books" },
     ];
