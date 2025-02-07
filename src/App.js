@@ -5,13 +5,11 @@ import AppRouter from "./router/routes";
 
 function App() {
     return (
-        <div className="flex h-screen">
+        <div className="flex h-screen ">
             <Sidebar />
-
-            <div className="w-4/5 flex flex-col">
+            <div className="w-4/5 flex flex-col bg-gray-100 p-8">
                 <Navbar />
-
-                <div className="flex-1 p-6 bg-gray-100 overflow-auto">
+                <div className="flex-1 p-6  overflow-auto">
                     <AppRouter />
                 </div>
             </div>
