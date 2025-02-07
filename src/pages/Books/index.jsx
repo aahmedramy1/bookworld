@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { debounce } from "lodash";
-import {addBook, editBook, filterBooksByName} from "../../redux/slices/booksSlice";
+import {addBook, editBook, filterBooksByName, removeBook} from "../../redux/slices/booksSlice";
 import BookModal from "./components/BookModal";
 
 const Index = () => {
@@ -46,7 +46,7 @@ const Index = () => {
                 {
                     label: 'Delete',
                     onClick: (row) => {
-                        console.log('Delete clicked for:', row);
+                        dispatch(removeBook(row.id));
                     }
                 }
             ]
