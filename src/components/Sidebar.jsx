@@ -9,7 +9,7 @@ const Sidebar = () => {
     const menuItems = [
         { icon: <MdGridView />, text: "Shop", path: "/shop" },
         { icon: <FaStore />, text: "Stores", path: "/stores" },
-        { icon: <FaFeather />, text: "Author", path: "/authors" },
+        { icon: <FaFeather />, text: "Author", path: "/admin/authors" },
         { icon: <FaBookOpen />, text: "Books", path: "/admin/books" },
     ];
 
